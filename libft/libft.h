@@ -1,5 +1,5 @@
 #ifndef
-#define 
+#define LIBFT_A 
 
 
 
