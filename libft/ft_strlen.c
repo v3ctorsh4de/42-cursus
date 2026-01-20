@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 16:23:23 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/20 16:08:55 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:34:01 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	len;
+	size_t len;
 
 	len = 0;
 	while (s[len] != '\0')
