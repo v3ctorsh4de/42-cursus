@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 11:15:09 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/13 16:46:14 by jreyes-s         ###   ########.fr       */
+/*   Created: 2026/01/12 16:23:23 by jreyes-s          #+#    #+#             */
+/*   Updated: 2026/01/15 13:53:18 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+size_t ft_strlen(const char *s)
 {
-	d
+	size_t len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
