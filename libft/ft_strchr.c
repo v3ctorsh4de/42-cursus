@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char *ft_strchr(const char *string, int c)
+char	*ft_strchr(const char *string, int c)
 {
 	while (*string != '\0')
 	{
@@ -26,14 +26,16 @@ char *ft_strchr(const char *string, int c)
 }
 /*
 #include <stdio.h>
-int main(void)
-{
-	char buffer1[20] = "computer program";
-	char *ptr;
-	int ch = 't';
 
+int	main(void)
+{
+	char	buffer1[20] = "computer program";
+	char	*ptr;
+	int		ch;
+
+	ch = 't';
 	ptr = ft_strchr(buffer1, ch);
 	printf("The first occurrence of %c in '%s' is '%s'\n",
-		   ch, buffer1, ptr);
+			ch, buffer1, ptr);
 }
 */
