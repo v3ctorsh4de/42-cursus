@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:00:41 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/23 02:05:16 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/23 02:07:49 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-
+/*
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -51,3 +51,4 @@ int	main(int argc, char **argv)
 	printf("%d\n", ft_atoi(str));
 	return (0);
 }
+*/
