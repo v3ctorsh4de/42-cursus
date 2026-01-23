@@ -6,35 +6,37 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:00:41 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/22 20:50:14 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/23 02:05:16 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	res;
 	int	sign;
+	int	i;
 
 	res = 0;
 	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= *13))
-		str++;
-	while (*str == '-' || *str == '+')
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	while (*str >= 48 && *str <= 57)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (res * 10) + (*str - 48);
-		str++;
+		res = (res * 10) + (str[i] - '0');
+		i++;
 	}
 	return (res * sign);
 }
-/*
+
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -44,10 +46,8 @@ int	main(int argc, char **argv)
 	str = argv[1];
 	if (argc != 2)
 	{
-		printf("Usage: %s\n", argv[1]);
 		return (1);
 	}
 	printf("%d\n", ft_atoi(str));
 	return (0);
 }
-*/
