@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 20:52:31 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/22 21:03:47 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/26 18:56:48 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdlib.h>
 
 int				ft_isalpha(int c);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
