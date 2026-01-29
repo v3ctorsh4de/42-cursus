@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:34:23 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/29 17:08:15 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/29 17:19:08 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -61,3 +61,4 @@ int	main(void)
 
 	return (0);
 }
+*/
