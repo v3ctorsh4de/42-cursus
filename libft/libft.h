@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 20:52:31 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/26 18:56:48 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/29 17:20:56 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *buf, int c, size_t count);
 int				ft_memcmp(const void *str1, const void *str2, size_t n);
 int				ft_atoi(const char *str);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 #endif
