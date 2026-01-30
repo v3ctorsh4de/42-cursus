@@ -51,8 +51,6 @@ Se ha utilizado Claude AI para:
 - **Optimización**: Sugerencias para simplificar código repetitivo (ejemplo: uso de ft_strchr en ft_strtrim)
 - **Clarificación de conceptos**: Explicación de punteros const y castings en funciones de memoria
 
-El código final ha sido escrito y comprendido completamente por el estudiante.
-
 ## Descripción de la Librería
 
 ### Funciones de Comprobación de Caracteres
@@ -119,4 +117,5 @@ Todas las funciones cumplen con:
 ---
 
 **Nota**: Este proyecto es solo con fines educativos como parte del programa de 42.
+
 
