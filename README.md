@@ -43,9 +43,7 @@ int main(void)
 
 ### Documentación y Referencias
 - [Manual de C (man pages)](https://man7.org/linux/man-pages/)
-- [C Programming - Wikibooks](https://en.wikibooks.org/wiki/C_Programming)
 - [The C Programming Language - Kernighan & Ritchie](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)
-- [Beej's Guide to C Programming](https://beej.us/guide/bgc/)
 
 ### Uso de IA
 Se ha utilizado Claude AI para:
@@ -121,3 +119,4 @@ Todas las funciones cumplen con:
 ---
 
 **Nota**: Este proyecto es solo con fines educativos como parte del programa de 42.
+
