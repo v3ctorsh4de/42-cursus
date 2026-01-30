@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:53:15 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/13 11:14:23 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/30 02:55:12 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 void	*memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t			i;
+	unsigned char	*dt;
+	unsigned char	*sr;
 
-	d = dest;
-	s = src;
-	while (n-- > 0)
-		*(d++) = *(s++);
-	return (dest);
+	if (!dest || !src)
+		return (NULL);
+	dt = dest;
+	sr = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		dt[i] = sr[i];
+		i++;
+	}
+	return (dt);
 }
