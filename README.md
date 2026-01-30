@@ -39,11 +39,6 @@ int main(void)
 }
 ```
 
-Compilar con libft:
-```bash
-gcc main.c -L. -lft -o programa
-```
-
 ## Recursos
 
 ### Documentación y Referencias
