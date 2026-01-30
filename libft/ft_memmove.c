@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 11:29:02 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/30 13:23:31 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/30 15:35:31 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	if (tsrc < tdest)
 	{
 		i = n;
-		while (i > 0)
-		{
-			i--;
+		while (i-- > 0)
 			tdest[i] = tsrc[i];
-		}
 	}
 	else
 	{
