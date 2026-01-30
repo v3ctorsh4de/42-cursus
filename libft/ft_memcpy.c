@@ -6,13 +6,13 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:53:15 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/30 13:34:42 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/30 13:35:30 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*dt;
