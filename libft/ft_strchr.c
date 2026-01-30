@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:08:29 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/01/14 12:29:35 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/01/30 02:35:32 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *string, int c)
 		string++;
 	}
 	if ((char)c == '\0')
-		return (NULL);
+		return ((char *)string);
 	return (NULL);
 }
 /*
