@@ -1,6 +1,6 @@
 # Libft
 
-*Este proyecto ha sido creado como parte del proyecto de recreacion de la libreria libc o libft de 42 por jreyes-s.*
+*Este proyecto ha sido creado como parte del proyecto de recreación de la librería (libc) o (libft) de 42 por jreyes-s.*
 
 ## Descripción
 
@@ -117,6 +117,7 @@ Todas las funciones cumplen con:
 ---
 
 **Nota**: Este proyecto es solo con fines educativos como parte del programa de 42.
+
 
 
 
