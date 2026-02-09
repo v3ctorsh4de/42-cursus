@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 21:01:36 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/10 00:29:27 by jreyes-s         ###   ########.fr       */
+/*   Created: 2026/02/09 22:06:56 by jreyes-s          #+#    #+#             */
+/*   Updated: 2026/02/09 23:14:55 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_puthex(unsigned int n, int uppercase)
 {
-	int	i;
+	char	*hex_digits;
+	int		count;
 
-	if (!s)
-		return (write(1, "NULL", 4));
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	return (i);
+	count = 0;
+	if (uppercase)
+		hex_digits = "0123456789ABCDEF";
+	else
+		hex_digits = "0123456789abcdef";
+	if (n >= 16)
+		count += ft_puthex(n / 16, uppercase);
+	count += ft_putchar(hex_digits[n % 16]);
+	return (count);
 }
 /*
 int	main(void)
 {
-	ft_printf_str("Hola, buenos dias!");
+	ft_puthex(42, 1);
 	return (0);
 }
 */

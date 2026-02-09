@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 21:01:36 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/10 00:29:27 by jreyes-s         ###   ########.fr       */
+/*   Created: 2026/02/09 23:17:52 by jreyes-s          #+#    #+#             */
+/*   Updated: 2026/02/09 23:57:53 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_putptr(void *ptr)
 {
-	int	i;
+	unsigned long	addr;
+	int				count;
 
-	if (!s)
-		return (write(1, "NULL", 4));
-	i = 0;
-	while (s[i])
+	addr = (unsigned long)ptr;
+	count = 0;
+	count += ft_putstr("0x");
+	if (!ptr)
 	{
-		ft_putchar(s[i]);
-		i++;
+		count += ft_putchar('0');
+		return (count);
 	}
-	return (i);
+	count += ft_puthex(addr, 0);
+	return (count);
 }
-/*
-int	main(void)
-{
-	ft_printf_str("Hola, buenos dias!");
-	return (0);
-}
-*/
