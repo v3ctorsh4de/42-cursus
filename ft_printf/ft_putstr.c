@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:01:36 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/10 00:29:27 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/10 00:31:07 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(char *s)
 	int	i;
 
 	if (!s)
-		return (write(1, "NULL", 4));
+		return (write(1, "(null)", 6));
 	i = 0;
 	while (s[i])
 	{
