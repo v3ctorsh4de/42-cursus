@@ -5,15 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/09 19:38:02 by jreyes-s          #+#    #+#              #
-#    Updated: 2026/02/11 22:38:35 by jreyes-s         ###   ########.fr        #
+#    Created: 2026/02/11 22:44:33 by jreyes-s          #+#    #+#              #
+#    Updated: 2026/02/11 22:44:40 by jreyes-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
 SRCS = ft_atoi.c ft_isalpha.c ft_memchr.c ft_memset.c ft_strjoin.c ft_strncmp.c \
        ft_substr.c ft_bzero.c ft_isascii.c ft_memcmp.c ft_strlcat.c \
        ft_strnstr.c ft_tolower.c ft_calloc.c ft_isdigit.c ft_memcpy.c \
@@ -21,11 +20,9 @@ SRCS = ft_atoi.c ft_isalpha.c ft_memchr.c ft_memset.c ft_strjoin.c ft_strncmp.c 
        ft_isprint.c ft_memmove.c ft_strdup.c ft_strlen.c ft_strtrim.c ft_split.c \
        ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
        ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c \
-	   ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-	   ft_lstsize.c ft_lstlast.c
-
+       ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+       ft_lstsize.c ft_lstlast.c
 OBJS = $(SRCS:.c=.o)
-
 AR = ar rcs
 RM = rm -f
 HEADER = libft.h
@@ -34,6 +31,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
+
+bonus: $(NAME)
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -46,4 +45,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
