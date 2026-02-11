@@ -1,6 +1,4 @@
-# Libft
-
-*Este proyecto ha sido creado como parte del proyecto de recreación de la librería (libc) o (libft) de 42 por jreyes-s.*
+Este proyecto ha sido creado como parte del proyecto de recreación de la librería (libc) o (libft) de 42 por jreyes-s.
 
 ## Descripción
 
