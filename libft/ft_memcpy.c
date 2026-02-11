@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:53:15 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/11 19:36:04 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/11 19:59:26 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*dt;
 	unsigned char	*sr;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	dt = (unsigned char *)dest;
 	sr = (unsigned char *)src;
