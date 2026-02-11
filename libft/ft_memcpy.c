@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:53:15 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/11 19:24:44 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/11 19:36:04 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*dt;
 	unsigned char	*sr;
 
-	if (!dest && src)
+	if (!dest || !src)
 		return (NULL);
 	dt = (unsigned char *)dest;
 	sr = (unsigned char *)src;
@@ -30,3 +30,22 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char dest[10] = "test";
+    char src[] = "nuevo";
+    
+    void *result = memcpy(dest, src, 0);
+    
+    printf("dest apunta a: %p\n", (void *)dest);
+    printf("result apunta a: %p\n", result);
+    printf("¿Son iguales? %s\n", (result == dest) ? "SÍ" : "NO");
+    printf("Contenido de dest: %s\n", dest);  // Sigue siendo "test"
+    
+    return 0;
+}
+*/
