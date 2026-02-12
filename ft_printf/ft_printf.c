@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:57:45 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/12 17:50:23 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/12 19:52:34 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 static int	dispatch(char c, va_list args)
 {
+	int	size;
+
+	size = 0;
 	if (c == 'c')
-		return (ft_putchar(va_arg(args, int)));
+		size += ft_putchar(va_arg(args, int));
 	else if (c == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		size += ft_putstr(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(args, int)));
+		size += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
-		return (ft_putnbr_unsigned(va_arg(args, unsigned int)));
+		size += ft_putnbr_unsigned(va_arg(args, unsigned int));
 	else if (c == 'x')
-		return (ft_puthex(va_arg(args, unsigned int), 0));
+		size += ft_puthex(va_arg(args, unsigned int), 0);
 	else if (c == 'X')
-		return (ft_puthex(va_arg(args, unsigned int), 1));
+		size += ft_puthex(va_arg(args, unsigned int), 1);
 	else if (c == 'p')
-		return (ft_putptr(va_arg(args, void *)));
+		size += ft_putptr(va_arg(args, void *));
 	else if (c == '%')
-		return (ft_putchar('%'));
-	return (-1);
+		size += ft_putchar('%');
+	return (size);
 }
 
 int	ft_printf(char const *format, ...)
@@ -53,8 +56,6 @@ int	ft_printf(char const *format, ...)
 			count += ft_putchar(format[i]);
 		i++;
 	}
-	if (dispatch(i) == -1)
-		return (-1);
 	va_end(args);
 	return (count);
 }
