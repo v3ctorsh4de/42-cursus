@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:57:45 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/10 17:57:27 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:50:23 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	dispatch(char c, va_list args)
 		return (ft_putptr(va_arg(args, void *)));
 	else if (c == '%')
 		return (ft_putchar('%'));
-	return (0);
+	return (-1);
 }
 
 int	ft_printf(char const *format, ...)
@@ -53,6 +53,8 @@ int	ft_printf(char const *format, ...)
 			count += ft_putchar(format[i]);
 		i++;
 	}
+	if (dispatch(i) == -1)
+		return (-1);
 	va_end(args);
 	return (count);
 }
