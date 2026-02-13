@@ -6,11 +6,24 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:57:45 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/12 19:56:13 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/13 20:02:50 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	ft_check_final_char(char c)
+{
+	char	*str;
+	int		i;
+
+	str = "csduxXp%";
+	i = 0;
+	while (str[i] && str[i] != c)
+	{
+
+	}
+}
 
 static int	dispatch(char c, va_list args)
 {
