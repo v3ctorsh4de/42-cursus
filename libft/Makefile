@@ -6,7 +6,7 @@
 #    By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/11 22:44:33 by jreyes-s          #+#    #+#              #
-#    Updated: 2026/02/13 18:12:21 by jreyes-s         ###   ########.fr        #
+#    Updated: 2026/02/13 18:14:07 by jreyes-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,4 +43,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
