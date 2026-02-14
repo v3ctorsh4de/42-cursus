@@ -1,7 +1,5 @@
 ## *Este proyecto ha sido creado como parte del currículo de 42 por jreyes-s.*
 
-# ft_printf
-
 ## Descripción
 En este proyecto implementé mi propia versión de la función estándar `printf` de C, llamada **ft_printf**.  
 El objetivo principal fue entender cómo funciona internamente el formateo de salida en C y cómo manejar especificadores, ancho, precisión y flags.
