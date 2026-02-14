@@ -173,6 +173,3 @@ ft_printf("Porcentaje: %%\n");
 * No implementé especificadores avanzados como `%f`, `%e` o `%g`.
 * No soporté flags avanzados como `+` o espacio.
 * No implementé modificadores de longitud (`l`, `ll`, `h`, `hh`).
-
-```
-```
