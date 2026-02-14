@@ -18,22 +18,22 @@ static int	dispatch(char c, va_list args)
 
 	size = 0;
 	if (c == 'c')
-		size += ft_putchar(va_arg(args, int));
+		size = ft_putchar(va_arg(args, int));
 	else if (c == 's')
-		size += ft_putstr(va_arg(args, char *));
+		size = ft_putstr(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
-		size += ft_putnbr(va_arg(args, int));
+		size = ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
-		size += ft_putnbr_unsigned(va_arg(args, unsigned int));
+		size = ft_putnbr_unsigned(va_arg(args, unsigned int));
 	else if (c == 'x')
-		size += ft_puthex(va_arg(args, unsigned int), 0);
+		size = ft_puthex(va_arg(args, unsigned int), 0);
 	else if (c == 'X')
-		size += ft_puthex(va_arg(args, unsigned int), 1);
+		size = ft_puthex(va_arg(args, unsigned int), 1);
 	else if (c == 'p')
-		size += ft_putptr(va_arg(args, void *));
+		size = ft_putptr(va_arg(args, void *));
 	else if (c == '%')
-		size += ft_putchar('%');
-	return (size);
+		size = ft_putchar('%');
+	retrun(size);
 }
 
 int	ft_printf(char const *format, ...)
@@ -41,6 +41,7 @@ int	ft_printf(char const *format, ...)
 	va_list	args;
 	int		i;
 	int		count;
+	int		tmp;
 
 	va_start(args, format);
 	i = 0;
@@ -48,12 +49,12 @@ int	ft_printf(char const *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
-		{
-			i++;
-			count += dispatch(format[i], args);
-		}
+			tmp = dispatch(format[++i], args);
 		else
-			count += ft_putchar(format[i]);
+			tmp = ft_putchar(format[i]);
+		if (count == -1)
+			return (-1);
+		count += tmp;
 		i++;
 	}
 	va_end(args);
