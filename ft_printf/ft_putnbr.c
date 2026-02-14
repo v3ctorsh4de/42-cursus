@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:19:40 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/14 16:42:45 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/14 17:43:42 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ int	ft_putnbr(int n)
 		tmp = ft_putnbr(nbr / 10);
 		if (tmp == -1)
 			return (-1);
-		count++;
+		count += tmp;
 	}
-	if (ft_putchar((nbr % 10) + '0') == -1)
+	tmp = ft_putchar((nbr % 10) + '0');
+	if (tmp == -1)
 		return (-1);
-	return (count + 1);
+	count += tmp;
+	return (count);
 }
 /*
 int	main(void)

@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:01:36 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/10 00:53:27 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/14 17:38:11 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_putstr(char *s)
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		if (ft_putchar(s[i]) == -1)
+			return (-1);
 		i++;
 	}
 	return (i);
