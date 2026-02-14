@@ -112,6 +112,3 @@ Todas las funciones cumplen con:
 - ✅ Manejo correcto de casos edge
 - ✅ Protección contra NULL pointers
 
----
-
-**Nota**: Este proyecto es solo con fines educativos como parte del programa de 42.
