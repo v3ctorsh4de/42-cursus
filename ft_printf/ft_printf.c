@@ -6,11 +6,19 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:57:45 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/14 18:04:29 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/14 19:47:05 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	safe_add(int *count, int ret)
+{
+	if (ret == -1)
+		return (-1);
+	*count += ret;
+	return (0);
+}
 
 static int	dispatch(char c, va_list args)
 {
@@ -41,7 +49,6 @@ int	ft_printf(char const *format, ...)
 	va_list	args;
 	int		i;
 	int		count;
-	int		tmp;
 
 	va_start(args, format);
 	i = 0;
@@ -49,12 +56,14 @@ int	ft_printf(char const *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
-			tmp = dispatch(format[++i], args);
+		{
+			i++;
+			if (safe_add(&count, dispatch(format[i], args)) == -1)
+				return (-1);
+		}
 		else
-			tmp = ft_putchar(format[i]);
-		if (tmp == -1)
-			return (-1);
-		count += tmp;
+			if (safe_add(&count, ft_putchar(format[i])) == -1)
+				return (-1);
 		i++;
 	}
 	va_end(args);
