@@ -6,11 +6,14 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 19:10:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/11 19:10:37 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/14 22:30:57 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE
-# define GET_NEXT_LINE
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+
+# include <stdlib.h>
+# include <unistd.h>
 
 #endif // !
