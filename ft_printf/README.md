@@ -2,31 +2,31 @@
 
 ## Descripción
 En este proyecto implementé mi propia versión de la función estándar `printf` de C, llamada **ft_printf**.  
-El objetivo principal fue entender cómo funciona internamente el formateo de salida en C y cómo manejar especificadores, ancho, precisión y flags.
+El objetivo principal fue entender cómo funciona internamente el formateo de salida básico en C y el manejo de argumentos variables (`va_list`).
 
-Mi implementación soporta los formatos más usados, como:
-- `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`
-
-La idea es que el resultado sea lo más parecido posible al comportamiento de `printf` en casos comunes y límites.
+Mi implementación soporta las siguientes conversiones:
+- `%c`: Imprime un solo carácter.
+- `%s`: Imprime una cadena de caracteres (string).
+- `%p`: El puntero `void *` dado como argumento se imprime en formato hexadecimal.
+- `%d`: Imprime un número decimal (base 10).
+- `%i`: Imprime un entero en base 10.
+- `%u`: Imprime un número decimal sin signo (unsigned).
+- `%x`: Imprime un número hexadecimal (base 16) en minúsculas.
+- `%X`: Imprime un número hexadecimal (base 16) en mayúsculas.
+- `%%`: Imprime el signo de porcentaje.
 
 ---
 
 ## Instrucciones
 
 ### 1. Compilación
-Para compilar el proyecto, ejecuto:
+Para compilar el proyecto y generar la librería estática, ejecuta:
 
 ```bash
 make
-````
-
-Esto genera el archivo:
-
-```
-libftprintf.a
 ```
 
----
+Esto generará el archivo `libftprintf.a`.
 
 ### 2. Limpieza
 
@@ -36,7 +36,7 @@ Para eliminar los archivos objeto (.o):
 make clean
 ```
 
-Para eliminar también la librería:
+Para eliminar también la librería `libftprintf.a`:
 
 ```bash
 make fclean
@@ -50,126 +50,66 @@ make re
 
 ---
 
-### 3. Uso de la librería (cómo utilizar ft_printf)
+### 3. Uso de la librería
+
+Para usar `ft_printf` en tus proyectos, debes incluir el header y enlazar la librería compilada.
 
 #### 3.1 Incluir el header
 
-En mi archivo `main.c` incluyo:
+En tu archivo fuente (`.c`):
 
 ```c
 #include "ft_printf.h"
 ```
 
-#### 3.2 Ejemplo básico
+#### 3.2 Ejemplo de uso
 
 ```c
+#include "ft_printf.h"
+
 int main(void)
 {
-    ft_printf("Hola %s, numero %d, hex %x\n", "mundo", 42, 255);
+    ft_printf("Caracter: %c\n", 'A');
+    ft_printf("String: %s\n", "Hola mundo");
+    ft_printf("Entero: %d\n", 42);
+    ft_printf("Hexadecimal: %x\n", 255);
+    int x;
+    ft_printf("Puntero: %p\n", &x);
     return (0);
 }
 ```
 
-#### 3.3 Compilar mi programa usando la librería
+#### 3.3 Compilar tu programa
+
+Asumiendo que tienes un `main.c` y la librería `libftprintf.a` en el mismo directorio:
 
 ```bash
-cc -Wall -Wextra -Werror main.c -L. -lftprintf
-```
-
-> `-L.` indica que la librería está en la carpeta actual y `-lftprintf` enlaza `libftprintf.a`.
-
----
-
-## Recursos
-
-* Documentación oficial de `printf` (man 3 printf)
-* [Referencia de conversiones y especificadores](https://en.cppreference.com/w/c/io/fprintf)
-* Tutoriales y guías de formateo de strings en C
-* Ejemplos de implementación de `printf` en C
-
-### Uso de IA
-
-Durante el desarrollo de este proyecto utilicé IA únicamente para:
-
-* Generar ideas sobre la estructura del código.
-* Resolver dudas puntuales sobre lógica y formateo.
-* Revisar errores comunes y sugerir mejoras.
-
-No utilicé IA para copiar implementaciones completas ni para sustituir el trabajo propio del proyecto.
-
----
-
-## Algoritmo y estructura de datos (Explicación y justificación)
-
-### Estructura de datos
-
-Para almacenar los parámetros del formato (`flags`, `width`, `precision`, `specifier`) creé una estructura `t_format`:
-
-```c
-typedef struct s_format
-{
-    int  flag_minus;
-    int  flag_zero;
-    int  width;
-    int  precision;
-    int  precision_specified;
-    char specifier;
-} t_format;
-```
-
-**Justificación:**
-
-* Un struct me permite agrupar todos los parámetros en un solo lugar.
-* Facilita pasar esta información entre funciones sin usar muchas variables.
-* Me permite ampliar el proyecto si necesito añadir nuevos flags o especificadores.
-
----
-
-### Algoritmo principal
-
-El algoritmo general de `ft_printf` que implementé sigue estos pasos:
-
-1. Recorrer la cadena de formato (`format`) carácter por carácter.
-2. Cuando encuentro un `%`, parseo el formato completo hasta llegar al especificador.
-3. Guardo flags, ancho, precisión y especificador en `t_format`.
-4. Selecciono la función adecuada según el especificador:
-
-   * `%c` → imprimir caracter
-   * `%s` → imprimir string
-   * `%p` → imprimir puntero en hexadecimal
-   * `%d` / `%i` → imprimir entero con signo
-   * `%u` → imprimir entero sin signo
-   * `%x` / `%X` → imprimir entero en hexadecimal
-   * `%%` → imprimir `%`
-5. La función de impresión se encarga de:
-
-   * aplicar ancho (`width`)
-   * aplicar precisión (`precision`)
-   * respetar flags (`-`, `0`)
-   * retornar el número de caracteres impresos
-
-**Justificación del algoritmo:**
-
-* Me permite dividir el problema en partes pequeñas y manejables.
-* Separa el parseo del formato y la impresión, lo que hace el código más modular.
-* Reduce errores al evitar variables globales y facilita futuras ampliaciones.
-
----
-
-## Ejemplos de uso
-
-```c
-ft_printf("String: %s\n", "hola");
-ft_printf("Entero: %d\n", 42);
-ft_printf("Hex: %x\n", 255);
-ft_printf("Puntero: %p\n", &ft_printf);
-ft_printf("Porcentaje: %%\n");
+cc -Wall -Wextra -Werror main.c -L. -lftprintf -o mi_programa
 ```
 
 ---
 
-## Limitaciones conocidas
+## Implementación
 
-* No implementé especificadores avanzados como `%f`, `%e` o `%g`.
-* No soporté flags avanzados como `+` o espacio.
-* No implementé modificadores de longitud (`l`, `ll`, `h`, `hh`).
+El funcionamiento de `ft_printf` es directo y se basa en el manejo de argumentos variables:
+
+1.  Recorre la cadena de formato (`format`) carácter por carácter.
+2.  Si encuentra un `%`, lee el siguiente carácter para determinar el tipo de conversión.
+3.  Llama a una función auxiliar específica (`dispatch`) que extrae el argumento correspondiente usando `va_arg` y lo imprime con la función helper adecuada (`ft_putchar`, `ft_putstr`, `ft_putnbr`, etc.).
+4.  Lleva la cuenta de todos los caracteres impresos y la retorna al final, o `-1` si ocurre un error de escritura.
+
+---
+
+## Recursos utilizados
+* `man 3 printf`
+* `man 3 stdarg`
+
+---
+
+## Limitaciones
+
+Esta versión **no implementa**:
+*   Flags (`-`, `0`, `#`, `+`, espacio).
+*   Ancho mínimo de campo (`width`).
+*   Precisión (`.` followed by a number).
+*   Modificadores de longitud (`l`, `ll`, `h`, `hh`).
