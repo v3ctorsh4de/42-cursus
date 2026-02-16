@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 19:13:11 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/15 03:32:44 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/16 03:25:05 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 char	*get_next_line(int fd)
 {
-	int		fd;
-	size_t	n;
-	char	*buf[BUF_SIZE];
+	ssize_t	n;
+	char	buf[BUF_SIZE];
 
-	fd = open("libro.txt", O_RDONLY);
+	if (fd < 0)
+		return (NULL);
 	while ((n = read(fd, buf, BUF_SIZE)) > 0)
-	{
-		ft_putstr();
-	}
-	close(fd);
+		ft_putchar(buf, n);
+	if (n < 0)
+		return (NULL);
+	return ;
 }
