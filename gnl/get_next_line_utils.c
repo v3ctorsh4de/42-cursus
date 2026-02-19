@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/19 20:29:00 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:36:55 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	*ft_update_stash(char *stash)
 		if (stash[i] == '\n')
 		{
 			start = ++i;
-			new_stash =  malloc(sizeof(char) * (ft_strlen(stash) - start + 1));
+			new_stash = malloc(sizeof(char) * (ft_strlen(stash) - start + 1));
 			if (!new_stash)
 				return (free(stash), NULL);
 			start = 0;
@@ -116,4 +116,3 @@ char	*ft_update_stash(char *stash)
 	}
 	return (free(stash), NULL);
 }
-
