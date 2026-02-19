@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/19 20:36:55 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:57:06 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,32 +22,32 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *stash, char *buf)
 {
 	char	*res;
 	char	*tmp;
 	int		i;
 	int		j;
 
-	tmp = s1;
-	if (!s1)
-		s1 = "";
-	if (!s2)
+	tmp = stash;
+	if (!stash)
+		stash = "";
+	if (!buf)
 		return (free(tmp), NULL);
-	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	res = malloc(sizeof(char) * (ft_strlen(stash) + ft_strlen(buf) + 1));
 	if (!res)
 		return (free(tmp), NULL);
 	i = 0;
-	while (s1[i])
+	while (stash[i])
 	{
-		res[i] = s1[i];
+		res[i] = stash[i];
 		i++;
 	}
 	if (tmp)
 		free(tmp);
 	j = 0;
-	while (s2[j])
-		res[i + j] = s2[j++];
+	while (buf[j])
+		res[i + j] = buf[j++];
 	res[i + j] = '\0';
 	return (res);
 }
