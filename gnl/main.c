@@ -1,15 +1,16 @@
+#include "get_next_line.h"
+
 int	main(void)
 {
-	int fd = open("libro.txt", O_RDONLY);
+	int		fd;
+	char	*line;
 
-	char *line;
-
+	fd = open("libro.txt", O_RDONLY);
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		printf("%s", line);
-	    free(line);
+		free(line);
 	}
-
 	close(fd);
 	return (0);
 }

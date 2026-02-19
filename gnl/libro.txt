@@ -1,0 +1,20 @@
+Introduction to Algorithms
+Artificial Intelligence: A Modern Approach
+Clean Code
+Design Patterns: Elements of Reusable Object-Oriented Software
+The Pragmatic Programmer
+Structure and Interpretation of Computer Programs
+Computer Networking: A Top-Down Approach
+Operating System Concepts
+Modern Operating Systems
+Code: The Hidden Language of Computer Hardware and Software
+Compilers: Principles, Techniques, and Tools
+Programming Pearls
+The Art of Computer Programming
+Computer Organization and Design
+Introduction to the Theory of Computation
+Algorithms
+Refactoring: Improving the Design of Existing Code
+Deep Learning
+Pattern Recognition and Machine Learning
+Computer Graphics: Principles and Practice
