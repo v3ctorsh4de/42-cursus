@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/19 03:10:57 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:29:00 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,29 @@ char	*ft_extract_line(char *stash)
 
 char	*ft_update_stash(char *stash)
 {
+	int		i;
+	int		start;
+	char	*new_stash;
 
+	if (!stash)
+		return (NULL);
+	i = 0;
+	while (stash[i])
+	{
+		if (stash[i] == '\n')
+		{
+			start = ++i;
+			new_stash =  malloc(sizeof(char) * (ft_strlen(stash) - start + 1));
+			if (!new_stash)
+				return (free(stash), NULL);
+			start = 0;
+			while (stash[i])
+				new_stash[start++] = stash[i++];
+			new_stash[start] = '\0';
+			return (free(stash), new_stash);
+		}
+		i++;
+	}
+	return (free(stash), NULL);
 }
+
