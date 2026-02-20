@@ -6,38 +6,34 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 20:01:33 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/19 02:01:22 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/20 01:23:30 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-#define BUF_SIZE 42
-
 char	*get_next_line(int fd)
 {
-	ssize_t		n;
-	static int	i;
-	char		*stash;
-	char		*buf;
+	ssize_t			n;
+	static char		*stash;
+	char			*buf;
+	char			*line;
 
-	buf = malloc(sizeof(char) * (BUF_SIZE + 1));
-	if (!buf || fd < 0)
+	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
 		return (NULL);
-	while ((n = read(fd, buf, BUF_SIZE)) > 0)
+	if (fd < 0)
+		return (free(buf), NULL);
+	n = read(fd, buf, BUFFER_SIZE);
+	while (!ft_has_newline(stash) && n > 0)
 	{
-		tmp = ft_strjoin(stash, buf);
-		free(stash);
-		stash = tmp;
-		i = 0;
-		while (stash[i])
-		{
-			if (stash[i] == '\n')
-				return (stash);
-			else
-				i++;
-		}
+		buf[n] = '\0';
+		stash = ft_strjoin(stash, buf);
 	}
+	free(buf);
 	if (n < 0)
-		return (NULL);
+		return (free(stash), stash = NULL, NULL);
+	line = ft_extract_line(stash);
+	stash = ft_update_stash(stash);
+	return (line);
 }

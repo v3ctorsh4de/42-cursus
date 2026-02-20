@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:21:49 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/18 16:21:49 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/20 01:20:47 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*get_next_line(int fd);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-#endif // !
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *stash, char *buf);
+int		ft_has_newline(char *stash);
+char	*ft_extract_line(char *stash);
+char	*ft_update_stash(char *stash);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/19 20:57:06 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/20 01:22:46 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_strlen(char *str)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;
@@ -47,21 +49,24 @@ char	*ft_strjoin(char *stash, char *buf)
 		free(tmp);
 	j = 0;
 	while (buf[j])
-		res[i + j] = buf[j++];
+	{
+		res[i + j] = buf[j];
+		j++;
+	}
 	res[i + j] = '\0';
 	return (res);
 }
 
-int	ft_has_newline(char *str)
+int	ft_has_newline(char *stash)
 {
 	int	i;
 
-	if (!str)
+	if (!stash)
 		return (0);
 	i = 0;
-	while (str[i])
+	while (stash[i])
 	{
-		if (str[i] == '\n')
+		if (stash[i] == '\n')
 			return (1);
 		i++;
 	}
@@ -75,17 +80,18 @@ char	*ft_extract_line(char *stash)
 
 	if (!stash)
 		return (NULL);
-	line = malloc(sizeof(char) * ft_strlen(stash) + 1);
+	line = malloc(sizeof(char) * (ft_strlen(stash) + 1));
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (str[i])
+	while (stash[i] && stash[i] != '\n')
 	{
-		if (str[i] != '\n')
-			line[i] = stash[i];
+		line[i] = stash[i];
 		i++;
 	}
-	line[i] = '\n';
+	if (stash[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
 	return (line);
 }
 
