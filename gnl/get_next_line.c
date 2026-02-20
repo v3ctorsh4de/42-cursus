@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 20:01:33 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/20 02:24:50 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/20 19:16:06 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*get_next_line(int fd)
 	char			*buf;
 	char			*line;
 
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (NULL);
-	if (fd < 0)
-		return (free(buf), NULL);
 	n = 1;
 	while (!ft_has_newline(stash) && n > 0)
 	{
@@ -32,6 +32,8 @@ char	*get_next_line(int fd)
 			return (free(buf), free(stash), stash = NULL, NULL);
 		buf[n] = '\0';
 		stash = ft_strjoin(stash, buf);
+		if (!stash)
+			return (free(buf), NULL);
 	}
 	free(buf);
 	if (!stash || stash[0] == '\0')
