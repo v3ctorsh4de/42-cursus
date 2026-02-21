@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 20:01:33 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/20 19:42:41 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/21 03:08:43 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ char	*get_next_line(int fd)
 		return (free(stash), stash = NULL, NULL);
 	line = ft_extract_line(stash);
 	stash = ft_update_stash(stash);
+	free(stash);
 	return (line);
 }

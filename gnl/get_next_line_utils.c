@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/20 19:37:32 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/02/21 03:00:35 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+"Hola mundo\nAdios mundo\n"
 
 char	*ft_strjoin(char *stash, char *buf)
 {
@@ -95,8 +96,8 @@ char	*ft_extract_line(char *stash)
 		i++;
 	}
 	if (stash[i] == '\n')
-		line[i++] = '\n';
-	line[i] = '\0';
+		line[i] = '\n';
+	line[++i] = '\0';
 	return (line);
 }
 
