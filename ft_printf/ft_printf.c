@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:57:45 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/14 22:08:39 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/16 18:19:32 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	safe_add(int *count, int ret)
-{
-	if (ret == -1)
-		return (-1);
-	*count += ret;
-	return (0);
-}
 
 static int	dispatch(char c, va_list args)
 {
@@ -53,6 +45,8 @@ int	ft_printf(char const *format, ...)
 	va_start(args, format);
 	i = 0;
 	count = 0;
+	if (!format)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])

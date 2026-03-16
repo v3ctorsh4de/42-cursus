@@ -3,29 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:28:32 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/14 19:33:15 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/16 18:24:21 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	safe_add(int *count, int ret)
-{
-	if (ret == -1)
-		return (-1);
-	*count += ret;
-	return (0);
-}
-
 int	ft_putnbr_unsigned(unsigned int n)
 {
-	long	nbr;
+	unsigned long	nbr;
 	int		count;
 
-	nbr = n;
+	nbr = (unsigned long)n;
 	count = 0;
 	if (nbr >= 10)
 		if (safe_add(&count, ft_putnbr_unsigned(nbr / 10)) == -1)

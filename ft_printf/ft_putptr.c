@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jreyes-s <jreyes-s@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 23:17:52 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/02/14 19:05:25 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/16 18:19:46 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	safe_add(int *count, int ret)
-{
-	if (ret == -1)
-		return (-1);
-	*count += ret;
-	return (0);
-}
 
 static int	ft_puthex_ulong(unsigned long n, int uppercase)
 {
