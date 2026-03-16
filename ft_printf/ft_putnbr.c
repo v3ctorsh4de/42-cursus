@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:19:40 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/03/16 18:22:14 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:42:40 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,3 @@ int	ft_putnbr(int n)
 		return (-1);
 	return (count);
 }
-/*
-int	main(void)
-{
-	ft_putnbr(25550404);
-	return (0);
-}
-*/

@@ -1,4 +1,4 @@
-## *Este proyecto ha sido creado como parte del currículo de 42 por jreyes-s.*
+*Este proyecto ha sido creado como parte del currículo de 42 por jreyes-s.*
 
 ## Descripción
 En este proyecto implementé mi propia versión de la función estándar `printf` de C, llamada **ft_printf**.  

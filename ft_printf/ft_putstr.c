@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:01:36 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/03/16 18:22:44 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:42:45 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ int	ft_putstr(char *s)
 	}
 	return (i);
 }
-/*
-int	main(void)
-{
-	ft_printf_str("Hola, buenos dias!");
-	return (0);
-}
-*/
