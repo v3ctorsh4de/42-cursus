@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/03/16 20:15:21 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:45:39 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void	copy_stash(char *stash, char *res)
 		res[i] = stash[i];
 		i++;
 	}
+	res[i] = '\0';
 }
 
 static void	copy_buf(char *buf, char *res, int offset)
