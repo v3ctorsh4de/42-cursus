@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 16:22:04 by jreyes-s          #+#    #+#             */
-/*   Updated: 2026/03/16 20:51:09 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2026/03/17 16:56:34 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,22 @@ int	ft_has_newline(char *stash)
 	return (0);
 }
 
+static char	*extract_line_helper(char *stash, char *line)
+{
+	int	j;
+
+	j = 0;
+	while (stash[j] && stash[j] != '\n')
+	{
+		line[j] = stash[j];
+		j++;
+	}
+	if (stash[j] == '\n')
+		line[j++] = '\n';
+	line[j] = '\0';
+	return (line);
+}
+
 char	*ft_extract_line(char *stash)
 {
 	char	*line;
@@ -103,18 +119,7 @@ char	*ft_extract_line(char *stash)
 	line = malloc(sizeof(char) * (i + 1));
 	if (!line)
 		return (free(stash), NULL);
-	i = 0;
-	while (stash[i] && stash[i] != '\n')
-	{
-		line[i] = stash[i];
-		i++;
-	}
-	if (stash[i] == '\n')
-	{
-		line[i] = '\n';
-		i++;
-	}
-	line[i] = '\0';
+	extract_line_helper(stash, line);
 	return (line);
 }
 
